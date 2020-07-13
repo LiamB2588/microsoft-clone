@@ -1,0 +1,344 @@
+@import "config", "utilities";
+
+// Reset
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+// Body styles
+body {
+	font-family: "Segoe UI", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	background: $main-color;
+	color: set-text-color($main-color);
+	font-size: 15px;
+	line-height: 1.5;
+}
+
+a {
+	color: set-text-color($main-color);
+	text-decoration: none; // Removes underline of link
+}
+
+ul {
+	list-style: none; // Removes bullet-point next to link
+}
+
+// Main Nav
+#main-nav {
+	display: flex; // Aligns all elements in container in a row horizontally
+	justify-content: space-between; // Any remaining space will go between the elements
+	align-items: center; // Aligns items centered vertically
+	height: 60px; // Makes height of main-nav 60px of the main page container
+	padding-top: 1rem; // Makes gap for nav from top of page
+	font-size: 13px;
+
+	ul {
+		display: flex; // Aligns ul in a row horizontally
+	}
+
+	li {
+		padding: 1rem 1rem; // Adds padding to each list item
+	}
+
+	// links
+	a {
+		padding-bottom: 2px; // Adds padding between links and hover border (pushes down border)
+
+		// Adds bottom border to links when hovering
+		&:hover {
+			border-bottom: 2px solid $dark-color;
+		}
+	}
+
+	// Main-menu class
+	.main-menu {
+		flex: 1; // Pushes main-menu class closer to the logo (to the left)
+		margin: 20px;
+	}
+
+	// Logo
+	.logo {
+		width: 110px;
+	}
+}
+
+// Bar Menu
+.menu-btn {
+	cursor: pointer;
+	position: absolute;
+	top: 20px; // 20px from the top of the screen
+	right: 30px; // 30px from the right of the screen
+	z-index: 2; // Puts btn on top of other elements
+	display: none; // Hides the btn
+}
+
+// Showcase
+#showcase {
+	width: 100%; // 100% width of container class
+	height: 400px;
+	background: url("https://i.ibb.co/zGSDGCL/slide1.png") no-repeat center
+		center/cover; // Adds image as showcase sections background image, does not repeat, the image is displayed center of the image and it covers the container
+	display: flex; // Places content into a horizontal row
+	flex-direction: column; // Places content into a column instead of horizontal row (vertically)
+	align-items: center; // Aligns content to center of container (vertically)
+	text-align: center;
+	justify-content: flex-end; // Places content to bottom of container
+	padding-bottom: 50px; // Pushes content up from bottom of container
+	margin-bottom: 20px; // Gives margin to bottom of container
+
+	h2,
+	p {
+		margin-bottom: 10px; // Gives space below h2 and p in showcase container
+	}
+
+	// Adds margin to the top of dark button only in showcase section
+	.btn-dark {
+		margin-top: 20px; // Adds margin to top of button
+	}
+}
+
+// Home Cards
+#home-cards {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 1rem;
+	margin-bottom: 40px; // Adds margin to bottom of cards section
+
+	img {
+		width: 100%; // Prevents the images in home-cards section from going out of container (Images will do this if max-width is not set).
+		margin-bottom: 20px; // Pushes text under image down, giving images space below them
+	}
+
+	h3 {
+		margin-bottom: 5px; // Pushes text under h3 down, giving h3 space below them
+	}
+
+	a {
+		display: inline-block; // They are automatically set to inline
+		padding-top: 10px; // Adds space above link from text
+		color: #0067b8;
+		text-transform: uppercase; // Changes links to uppercase
+		font-weight: bold; // Changes links text to bold
+
+		// Pushes icon arrow on link to the right when hovering
+		&:hover i {
+			margin-left: 10px;
+		}
+	}
+}
+
+// Xbox Section
+#xbox {
+	width: 100%;
+	height: 350px;
+	background: url("https://i.ibb.co/tBJGPD9/xbox.png") no-repeat center
+		center/cover; // Adds image as xbox sections background image, does not repeat, the image is displayed center of the image and it covers the container
+	margin-bottom: 20px;
+
+	.content {
+		width: 40%; // Makes all content inside content class 40% width of xbox section
+		padding: 50px 0 0 30px; // Pushes content 30px to right and 50px down in xbox section container
+
+		p {
+			margin: 10px 0 20px; // Adds margin to top and bottom of p, giving space between header and button
+		}
+	}
+}
+
+// Carbon Section
+#carbon {
+	width: 100%;
+	height: 350px;
+	background: url("https://i.ibb.co/72cgtsz/carbon.jpg") no-repeat center
+		center/cover; // Adds image as showcase sections background image, does not repeat, the image is displayed center of the image and it covers the container
+	margin-bottom: 20px;
+
+	.content {
+		width: 55%; // Makes all content inside content class 40% width of carbon section
+		padding: 100px 0 0 30px; // Pushes content 100px to right and 30px down in carbon section container
+
+		p {
+			margin: 10px 0 20px; // Adds margin to top and bottom of p, giving space between header and button
+		}
+	}
+}
+
+// Follow Section
+#follow {
+	display: flex;
+	margin: 30px 0 30px;
+	align-items: center; // Puts paragraph in middle
+	justify-content: start; // Aligns paragraph and images to the start
+
+	// Styles everything in the follow section
+	* {
+		margin-right: 10px; // Gives space to the right of each element
+	}
+}
+
+// Links Section
+#links {
+	background: #f2f2f2;
+	color: #616161;
+	font-size: 12px;
+	padding: 35px 0; // 35px top and bottom padding
+
+	.links-inner {
+		max-width: 1100px; // Max width is same as pages main container
+		margin: 0 auto; // Places content in section class to the center of the container
+		padding: 0 20px; // Adds padding to the left and right of the content
+		display: grid;
+		grid-template-columns: repeat(
+			6,
+			1fr
+		); // Places content in section into 6 columns
+		gap: 10px;
+		//align-items: flex-start;
+		//justify-content: center;
+
+		li {
+			line-height: 2.8; // Adds spacing to links
+		}
+	}
+}
+
+// Footer
+#main-footer {
+	background: #f2f2f2;
+	color: #616161;
+	font-size: 12px;
+	padding: 20px 0; // Adds padding to top and bottom of footer section
+
+	.inner-footer {
+		max-width: 1100px;
+		margin: 0 auto;
+		padding: 0 20px;
+		display: flex; // Places div and links in a row
+		align-items: center; // Centers the content vertically
+		justify-content: space-between; // Any remaining space will go between the 2 elements
+
+		div {
+			margin-bottom: 20px; // Gives space to the bottom of div
+			display: flex;
+			align-items: center; // Places div (icon and text) in-line with ul
+			font-size: 8px;
+
+			i {
+				margin-right: 50px; // Adds space to icon and text
+			}
+		}
+
+		ul {
+			display: flex; // Places all links in the ul into a row
+			flex-wrap: wrap; // Wraps links in ul to stack on top of each other when screen width is smaller
+		}
+
+		li {
+			margin-right: 30px; // Gives space to the right of each link
+			margin-bottom: 20px; // Gives space to the bottom of each link
+		}
+	}
+}
+
+// Media Queries
+
+// Tablet
+@media (max-width: 700px) {
+	.menu-btn {
+		display: block;
+
+		&:hover {
+			opacity: 0.5; // Adds opacity to btn when hovered
+		}
+	}
+
+	#main-nav {
+		.right-menu {
+			margin-right: 50px; // Pushes search and trolly icon to right of bar menu
+		}
+
+		.main-menu {
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background: #f2f2f2;
+			width: 50%; // Makes the menu 50% of the screen
+			height: 100%; // Makes the menu 100% the height of the page
+			border-right: #ccc solid 1px; // Adds border to the right
+			opacity: 0.9; // Makes menu transparent
+			padding: 30px; // Adds padding all around menu
+			//transform: translateX(-20px); // X axis is the horizontal axis. -20px pushes the menu to the left of the screen
+			transform: translateX(-500px); // Takes menu off the screen
+			transition: transform 0.5s ease-in-out;
+
+			li {
+				padding: 10px;
+				border-bottom: #ccc solid 1px;
+				font-size: 14px;
+
+				//  Last link (Support) has no border
+				&:last-child {
+					border-bottom: none;
+				}
+			}
+		}
+
+		// When bar menu is clicked the below class will display the bar menu
+		.show {
+			transform: translateX(-20px);
+		}
+	}
+
+	//  Home cards change to 2 columns
+	#home-cards {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	#xbox {
+		.content {
+			p {
+				display: none; // P is hidden in Xbox section
+			}
+
+			h2 {
+				margin-bottom: 20px;
+			}
+		}
+	}
+
+	// Changes width of carbon section to 85% of container
+	#carbon {
+		.content {
+			width: 85%;
+		}
+	}
+
+	//  Links section change to 2 columns
+	#links {
+		.links-inner {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+}
+
+// Mobile
+@media (max-width: 500px) {
+	// Home-cards stack on top of each other
+	#home-cards {
+		grid-template-columns: 1fr;
+	}
+
+	// Links stack on top of each other
+	#links {
+		.links-inner {
+			grid-template-columns: 1fr;
+
+			ul {
+				margin-bottom: 20px;
+			}
+		}
+	}
+}

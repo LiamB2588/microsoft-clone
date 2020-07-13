@@ -1,0 +1,47 @@
+.container {
+	width: 90%;
+	max-width: 1100px; // Prevents container element from exceeding 1100px width
+	margin: auto; // Gives even margin on all sides which will put inner elements in middle of container
+}
+
+// Global buttons shared styles
+%btn-shared {
+	cursor: pointer; // Turns cursor into a pointer when hovering over button
+	display: inline-block; //
+	border: 0; // No border
+	font-weight: bold; // Makes
+	padding: 10px 20px; // padding 10px top, bottom and 20px left and right
+}
+
+.btn {
+	// Dark button
+	&-dark {
+		@extend %btn-shared; // Inherits btn-shared styles
+		background: $dark-color;
+		color: set-text-color($dark-color);
+		font-size: 15px;
+
+		// btn hover
+		&:hover {
+			opacity: 0.9; // Lightens the color when hovering
+		}
+	}
+
+	// Light button
+	&-light {
+		@extend %btn-shared; // Inherits btn-shared styles
+		background: $main-color;
+		color: set-text-color($main-color);
+		font-size: 15px;
+
+		// btn hover
+		&:hover {
+			opacity: 0.9; // Lightens the color when hovering
+		}
+	}
+}
+
+// Dark class. If dark class selected, contents text color will be white
+.dark {
+	color: $main-color;
+}
